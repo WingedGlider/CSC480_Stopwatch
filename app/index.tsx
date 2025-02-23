@@ -1,6 +1,9 @@
-import React, { useState, useEffect, useRef } from "react";
-import { Text, View, Pressable } from "react-native";
+import React, { useState } from "react";
+import { Text, View, Pressable, ScrollView } from "react-native";
 import styles from "./styles";
+
+let IntervalID = setInterval(() => 1000);
+clearInterval(IntervalID);
 
 export default function Index() {
   const [paused, setpaused] = useState(false);
@@ -10,14 +13,10 @@ export default function Index() {
     time[1]
   ).padStart(2, "0")}:${String(time[0]).padStart(2, "0")}`;
 
-  let IntervalID = setInterval(() => 1000);
-  clearInterval(IntervalID); //doesn't work
-
   const togglewatch = () => {
     setpaused(!paused);
     if (!paused) {
       IntervalID = setInterval(() => {
-        //here
         settime((prev) => {
           let [hundredths, seconds, minutes] = prev;
           hundredths++;
@@ -44,9 +43,7 @@ export default function Index() {
   };
 
   const lap = () => {
-    if (paused) {
-      setlaptimes([time, ...laptimes]);
-    }
+    setlaptimes([time, ...laptimes]);
   };
 
   const deleteLap = (index: number) => {
@@ -57,6 +54,11 @@ export default function Index() {
 
   return (
     <View style={styles.appcontainer}>
+      <View style={{ flexDirection: "row", width: 390 }}>
+        <Pressable style={styles.about}>
+          <Text style={styles.abouttext}>About</Text>
+        </Pressable>
+      </View>
       <Text style={styles.time}>{formattedtime}</Text>
       <View style={styles.buttonbox}>
         <Pressable
@@ -72,7 +74,7 @@ export default function Index() {
       <Pressable onPress={lap} style={styles.lap}>
         <Text style={styles.buttontext}>Lap</Text>
       </Pressable>
-      <View style={styles.lapbox}>
+      <ScrollView style={styles.lapbox}>
         {laptimes.map((laptime, index) => (
           <View key={index} style={styles.laptime}>
             <Text style={styles.laptext}>
@@ -88,7 +90,7 @@ export default function Index() {
             </Pressable>
           </View>
         ))}
-      </View>
+      </ScrollView>
     </View>
   );
 }

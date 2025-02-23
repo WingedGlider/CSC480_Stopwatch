@@ -8,10 +8,25 @@ const styles = StyleSheet.create({
     alignItems: "center",
     backgroundColor: "#18191a",
   },
+  about: {
+    backgroundColor: "#ff69b4",
+    height: 50,
+    width: 100,
+    marginTop: 30,
+    borderRadius: 50,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  abouttext: {
+    fontSize: 17,
+    color: "white",
+  },
   time: {
     color: "white",
-    fontSize: 64,
+    fontSize: 72,
     fontWeight: "bold",
+    marginTop: 70,
+    marginBottom: 60,
   },
   buttonbox: {
     height: 80,
@@ -67,7 +82,6 @@ const styles = StyleSheet.create({
     display: "flex",
     height: 400,
     width: 350,
-    gap: 10,
   },
   laptime: {
     display: "flex",
@@ -77,6 +91,7 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     alignItems: "center",
     justifyContent: "center",
+    marginBottom: 10,
   },
   laptext: {
     color: "#18191a",
