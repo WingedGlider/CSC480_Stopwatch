@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "CSC480_Stopwatch",
-    "slug": "CSC480_Stopwatch",
+    "name": "CSC480 Stopwatch",
+    "slug": "CSC480 Stopwatch",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
