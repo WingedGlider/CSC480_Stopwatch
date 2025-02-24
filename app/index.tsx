@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Text, View, Pressable, ScrollView } from "react-native";
+import { useRouter } from "expo-router";
 import styles from "./styles";
 
 let IntervalID = setInterval(() => 1000);
@@ -12,6 +13,11 @@ export default function Index() {
   const formattedtime = `${String(time[2]).padStart(2, "0")}:${String(
     time[1]
   ).padStart(2, "0")}:${String(time[0]).padStart(2, "0")}`;
+
+  const router = useRouter();
+  const aboutpage = () => {
+    router.push("/about");
+  };
 
   const togglewatch = () => {
     setpaused(!paused);
@@ -55,7 +61,7 @@ export default function Index() {
   return (
     <View style={styles.appcontainer}>
       <View style={{ flexDirection: "row", width: 390 }}>
-        <Pressable style={styles.about}>
+        <Pressable onPress={aboutpage} style={styles.about}>
           <Text style={styles.abouttext}>About</Text>
         </Pressable>
       </View>

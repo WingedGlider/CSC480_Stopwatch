@@ -8,6 +8,16 @@ const styles = StyleSheet.create({
     alignItems: "center",
     backgroundColor: "#18191a",
   },
+  aboutcontainer: {
+    paddingTop: 20,
+    paddingBottom: 20,
+    paddingLeft: 10,
+    paddingRight: 10,
+    gap: 30,
+    flex: 1,
+    backgroundColor: "#18191a",
+    alignItems: "center",
+  },
   about: {
     backgroundColor: "#ff69b4",
     height: 50,
@@ -18,8 +28,9 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   abouttext: {
-    fontSize: 17,
+    fontSize: 16,
     color: "white",
+    fontWeight: "bold",
   },
   time: {
     color: "white",
@@ -57,6 +68,32 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
+  aboutpause: {
+    width: 300,
+    height: 80,
+    borderColor: "white",
+    borderWidth: 6,
+    backgroundColor: "#ff7600",
+    borderRadius: 50,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  aboutstart: {
+    width: 300,
+    height: 80,
+    backgroundColor: "#00ab41",
+    borderRadius: 50,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  aboutstop: {
+    width: 300,
+    height: 80,
+    backgroundColor: "red",
+    borderRadius: 50,
+    alignItems: "center",
+    justifyContent: "center",
+  },
   stop: {
     flex: 1,
     backgroundColor: "red",
@@ -80,7 +117,6 @@ const styles = StyleSheet.create({
   },
   lapbox: {
     display: "flex",
-    height: 400,
     width: 350,
   },
   laptime: {
